@@ -21,7 +21,7 @@ public class snakeAndLadderGame {
         int dice ;
         boolean bool = false;
 
-        
+
         //checking one to start the game
         do {
             dice = rand.nextInt(1,7);
@@ -35,11 +35,25 @@ public class snakeAndLadderGame {
         } while (bool == false);
 
         //creating game 
-        while(first_player <= 100){
+        while(first_player < 100){
             //creating dice
             dice = rand.nextInt(1,7);
             System.out.println("User get " + dice);
+
             first_player = first_player + dice;
+
+            //adding condition for perfect 100
+
+            if (first_player == 100 ){
+                System.out.println("\n ***Game over***");
+                System.out.println("!!!  First User Won te game  !!!");
+                break;
+            }
+
+            if (first_player > 100){
+                first_player = first_player - dice;
+            }
+
             System.out.println("First user is at "+ first_player);
             for (int i = 0 ; i < ladder.length ; i++){
                 if (ladder[i] == first_player){
