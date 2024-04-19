@@ -18,10 +18,26 @@ public class snakeAndLadderGame {
         int []snake = {27,35,39,50,59,66,73,76,89,97,99};
         int []del_point ={20,30,36,16,15,42,61,13,22,11,73};
 
+        int dice ;
+        boolean bool = false;
+
+        
+        //checking one to start the game
+        do {
+            dice = rand.nextInt(1,7);
+            System.out.println("User get "+ dice);
+            if (dice == 1){
+                System.out.println("\n\nGame Started");
+                first_player = first_player + 1;
+                System.out.println("First User at "+first_player);
+                bool = true;
+            }
+        } while (bool == false);
+
         //creating game 
         while(first_player <= 100){
             //creating dice
-            int dice = rand.nextInt(1,7);
+            dice = rand.nextInt(1,7);
             System.out.println("User get " + dice);
             first_player = first_player + dice;
             System.out.println("First user is at "+ first_player);
@@ -44,4 +60,3 @@ public class snakeAndLadderGame {
         }
     }
 }
-
