@@ -19,6 +19,7 @@ public class snakeAndLadderGame {
         int []del_point ={20,30,36,16,15,42,61,13,22,11,73};
 
         int dice ;
+        int dice_roll = 0;
         boolean bool = false;
 
 
@@ -26,6 +27,7 @@ public class snakeAndLadderGame {
         do {
             dice = rand.nextInt(1,7);
             System.out.println("User get "+ dice);
+            dice_roll++;
             if (dice == 1){
                 System.out.println("\n\nGame Started");
                 first_player = first_player + 1;
@@ -39,6 +41,7 @@ public class snakeAndLadderGame {
             //creating dice
             dice = rand.nextInt(1,7);
             System.out.println("User get " + dice);
+            dice_roll++;
 
             first_player = first_player + dice;
 
@@ -47,6 +50,7 @@ public class snakeAndLadderGame {
             if (first_player == 100 ){
                 System.out.println("\n ***Game over***");
                 System.out.println("!!!  First User Won te game  !!!");
+                System.out.println("Dice roll "+ dice_roll +" times");
                 break;
             }
 
